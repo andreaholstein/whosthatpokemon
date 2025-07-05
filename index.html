@@ -11,5 +11,29 @@
     <script src="./scripts/index.js" type="module"></script>
     <title>Home</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Who's That Pokemon?</h1>
+    </header>
+    <section class="hero">
+      <h2 class="hero__title">A Wild Pokemon Appears!</h2>
+      <div class="hero__card">
+        <h3 class="hero__card-title">Who is it?</h3>
+        <!-- add class on correct guess to toggle this H3 to print the Pokemon's name + ! -->
+      </div>
+      <button class="hero__pokemon-btn" id="searchBtn">
+        Search for Pokemon
+      </button>
+      <!-- add class after initial class to toggle this to run away and reset the game (hide form)-->
+      <!-- need a local API for submitting guesses and comparing to pokemon found -->
+      <!-- form should only appear after ^ button has been clicked -->
+      <!-- <form class="hero__guess-form" action="submit">
+        <label for="guess-form__input" class="guess-form__label">
+          <h3 class="guess-form__cta">Guess that Pokemon:</h3>
+          <input type="text" class="guess-form__input" placeholder="Which Pokemon is it?" required>
+        </label>
+        <button class="guess-form__submit">Guess!</button>
+      </form> -->
+    </section>
+  </body>
 </html>
