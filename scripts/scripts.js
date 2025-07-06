@@ -1,4 +1,4 @@
-import PokeApi from "./api";
+import PokeApi from "./pokeapi.js";
 
 // ---------- CALLING API ----------
 const api = new PokeApi();
@@ -6,22 +6,37 @@ const api = new PokeApi();
 async function fetchPokemon() {
   try {
     const response = await api.getPokemon();
+    console.log("RESP DATA", response.data.name);
+
     // render function for Pokemon
   } catch (error) {
     console.error("No Pokemon Found!");
   }
 }
 await fetchPokemon(); // await means not called on page load? what's await doing?
+// fetchPokemon();
 
 // ---------- DOM ----------
 // ---------- RENDER ----------
 
 function displayPokemon(data) {
   // create page components
+  const hero = document.querySelector("#hero");
+  // CARD
+  const whosThatCard = document.createElement("div");
+  whosThatCard.classList.add("hero__card");
+  whosThatCard.classList.add("#card");
+
+  // DYNAMIC TITLE
+  const whosThatTitle = document.createElement("h3");
+  whosThatTitle.classList.add("hero__poke-reveal");
+  whosThatTitle.classList.add("#reveal");
+  whosThatTitle.textContent = "Who is it?";
+  // logic for correct guess to flip content to Pokemon name
 }
 
 // ---------- SUBMIT GUESS EVENT LISTENER ------------
-// need to create  guessForm element
+// need to create guessForm element
 guessForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
