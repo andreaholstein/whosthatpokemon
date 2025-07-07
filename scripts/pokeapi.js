@@ -8,7 +8,8 @@ export default class PokeApi {
     const id = Math.floor(Math.random() * 150 + 1);
     // console.log("ID: ", id); // WORKS!!
     const response = await axios.get(`${this.url}/pokemon/${id}`);
-    // console.log("GET: ", response.data.name); // WOKRS!
+    // console.log("GET: ", response.data.name); // WORKS!
+    // console.log("GET: ", response.data.versions.yellow.front_gray); // grayscale?
     return response.data;
   }
 
